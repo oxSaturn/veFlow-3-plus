@@ -1,0 +1,25 @@
+name: npm run snapshot
+
+on:
+  schedule:
+    # run twice per day
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Run script
+        run: npm run snapshot
+      - name: Commit changes
+        run: |
+          git config --global user.email "oxSaturn@proton.me"
+          git config --global user.name "oxSaturn"
+          git add .
+          git commit -m "Run snapshot"
+          git push

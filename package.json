@@ -1,0 +1,16 @@
+{
+    "name": "veflow-3-plus",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "snapshot": "node src/index.mjs"
+    },
+    "keywords": [],
+    "author": "oxSaturn",
+    "license": "MIT",
+    "dependencies": {
+        "typescript": "^5.0.4",
+        "viem": "^0.3.50"
+    },
+    "private": true
+}
